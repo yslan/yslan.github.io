@@ -25,6 +25,8 @@ init() {
     _no_branch=true
     git checkout -b "$PAGES_BRANCH"
   else
+    git config --global user.name "GitHub Actions"
+    git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     git add .;git commit -m 'tmp' # don't push this
     git checkout "$PAGES_BRANCH"
   fi
