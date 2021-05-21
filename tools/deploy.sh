@@ -68,7 +68,7 @@ deploy() {
   if $_no_branch; then
     git push -u origin "$PAGES_BRANCH"
   else
-    git push -f origin master:"$PAGES_BRANCH"
+    git push -f origin master:"$PAGES_BRANCH"  # when do I go back to master?
   fi
 }
 
