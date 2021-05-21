@@ -25,6 +25,7 @@ init() {
     _no_branch=true
     git checkout -b "$PAGES_BRANCH"
   else
+    # dummy git to # FIXME, commit will be slow if files are large
     git config --global user.name "GitHub Actions"
     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     git add -A;git commit -m 'tmp' # don't push this
@@ -35,7 +36,7 @@ init() {
 backup() {
   mv _site/* "$_backup_dir"
 #  mv .git "$_backup_dir"
-  cp -r .git "$_backup_dir"
+#  cp -r .git "$_backup_dir"
 
   # When adding custom domain from Github website,
   # the CANME only exist on `gh-pages` branch
