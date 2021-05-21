@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 # Deploy the content of _site to 'origin/<pages_branch>'
-
 set -eu
+set -x
 
 PAGES_BRANCH="gh-pages"
 
@@ -34,7 +34,8 @@ init() {
 
 backup() {
   mv _site/* "$_backup_dir"
-  mv .git "$_backup_dir"
+#  mv .git "$_backup_dir"
+  cp -r .git "$_backup_dir"
 
   # When adding custom domain from Github website,
   # the CANME only exist on `gh-pages` branch
