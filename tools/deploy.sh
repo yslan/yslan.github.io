@@ -67,8 +67,8 @@ deploy() {
 }
 
 main() {
-  init
   backup
+  init
   flush
   deploy
 }
