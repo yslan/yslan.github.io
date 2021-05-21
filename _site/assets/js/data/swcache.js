@@ -48,7 +48,7 @@ const allowedDomains = [
     'www.google-analytics.com',
   
 
-  '',
+  'yslan.github.io',
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',
