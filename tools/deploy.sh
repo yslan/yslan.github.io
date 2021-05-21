@@ -25,6 +25,7 @@ init() {
     _no_branch=true
     git checkout -b "$PAGES_BRANCH"
   else
+    git add .;git commit -m 'tmp' # don't push this
     git checkout "$PAGES_BRANCH"
   fi
 }
