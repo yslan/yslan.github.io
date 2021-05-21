@@ -22,7 +22,6 @@ init() {
     git checkout -- Gemfile.lock
   fi
 
-    git branch -a -vv
   if [[ -z $(git branch -av | grep "$PAGES_BRANCH") ]]; then
     echo "NO BRANCH"
     _no_branch=true
@@ -33,7 +32,6 @@ init() {
     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     git add -A;git commit -m 'tmp' # don't push this
     git checkout "$PAGES_BRANCH"
-    git branch -a -vv
   fi
 }
 
@@ -61,7 +59,7 @@ deploy() {
   git config --global user.name "GitHub Actions"
   git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-  git update-ref -d HEAD
+# git update-ref -d HEAD
   git add -A
   git commit -m "[Automation] Site update No.${GITHUB_RUN_NUMBER}"
 
