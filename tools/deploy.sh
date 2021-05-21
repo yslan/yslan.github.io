@@ -18,10 +18,12 @@ init() {
   # Gemfile could be changed by `bundle install` in actions workflow
   if [[ -n $(git ls-files | grep Gemfile.lock) && -n \
   $(git status Gemfile.lock --porcelain) ]]; then
+    echo "GIT CO1"
     git checkout -- Gemfile.lock
   fi
 
   if [[ -z $(git branch -av | grep "$PAGES_BRANCH") ]]; then
+    echo "NO BRANCH"
     _no_branch=true
     git checkout -b "$PAGES_BRANCH"
   else
@@ -36,7 +38,7 @@ init() {
 backup() {
   mv _site/* "$_backup_dir"
 #  mv .git "$_backup_dir"
-#  cp -r .git "$_backup_dir"
+  cp -r .git "$_backup_dir"
 
   # When adding custom domain from Github website,
   # the CANME only exist on `gh-pages` branch
