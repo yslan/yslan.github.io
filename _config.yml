@@ -18,12 +18,12 @@ timezone: America/Chicago
 # --------------------------
 title: Yu-Hsiang Lan                   # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Homepage   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+#  A minimal, portfolio, sidebar,
+#  bootstrap Jekyll theme with responsive web design
+#  and focuses on text presentation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://yslan.github.io'
@@ -31,20 +31,22 @@ url: 'https://yslan.github.io'
 github:
   username: yslan                       # change to your github username
 
-#twitter:
-#  username: twitter_username            # change to your twitter username
+twitter:
+  username: twitter_username            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Yu-Hsiang Lan
-  email: example@doamin.com             # change to your email address
+  email: lan14_AT_illinois_DOT_edu             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username      # change to your twitter homepage
     - https://github.com/yslan           # change to your github homepage
+    #- https://scholar.google.com/citations?user=Hfzrm8EAAAAJ&hl
     # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    #- https://www.facebook.com/username
+    #- https://www.linkedin.com/in/yuhsianglan/
     # - https://www.linkedin.com/in/username
 
 google_site_verification: google_meta_tag_verification # change to your verification string
