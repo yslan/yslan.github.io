@@ -13,7 +13,7 @@ order: -100
 > **TODO**: Add pics / showcase
 > 
 
-![Mt_Jaden_2019](../assets/img/avatars/avatar_300x300.png){: width="300" height="300" .left}
+<!---![Mt_Jaden_2019](../assets/img/avatars/avatar_300x300.png){: width="300" height="300" .left}--->
 <!---![test](../assets/img/avatars/avatar_300x300.png){:.w-50 .left}-->
 
 
