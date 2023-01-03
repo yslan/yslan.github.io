@@ -2,6 +2,8 @@
 title: About Me
 icon: fas fa-info
 order: -100
+layout: post
+toc: true
 ---
 
 
