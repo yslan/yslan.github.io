@@ -2,7 +2,7 @@
 title: About Me
 icon: fas fa-info
 order: -100
-layout: post
+layout: tab
 toc: true
 ---
 
@@ -11,9 +11,6 @@ toc: true
 <!--[Google Scholar](https://scholar.google.com/citations?user=Hfzrm8EAAAAJ&hl) -->
 <!--[LinkedIn](https://www.linkedin.com/in/yuhsianglan/) -->
 
-
-> **TODO**: Add pics / showcase
-> 
 
 <!---![Mt_Jaden_2019](../assets/img/avatars/avatar_300x300.png){: width="300" height="300" .left}--->
 <!---![test](../assets/img/avatars/avatar_300x300.png){:.w-50 .left}-->
@@ -41,33 +38,5 @@ Now, I'm back to school and currently being a computer science master student at
 - Research Assistant, University of Illinois, 2021-current
 - Predoctoral Appointee, Argonne National Laboratory, 2018-2021
 - Summer Internship, Argonne National Laboratory, 2017, 2018, and 2022
-
-## Research Interests
-
-My current research is centered on Nek5000/NekRS[^nek5000]. 
-
-- High-Order Methods for Numerical Partial Differential Equations
-   - Incompressible Navier-Stokes (NS), Reynolds-Averaged Navier-Stokes (RANS)
-   - Poisson-Nernst-Planck (PNP)
-   - Steady state solver with Jacobian-free Newton Krylov (JFNK) method.
-   - Preconditioner with domain decomposition and multigrid methods.
-- High-Order Mesh Generation
-  - Voronoi cell based all-hex meshing algorithms for dense-packed spheres
-  - Mesh smoothing and optimization
-- High-Performance Computing
-   - Large-scale simulations on top 10 supercomputers including CPUs and GPUs 
-<!--   - ALCF: Mira, Theta/ThetaGPU, Polaris    -->
-<!--   - OLCF: Titan, Summit, Crusher           -->
-<!--   - NERSC: Perlmutter                      -->
-<!--   - NCSA: Delta                            -->   
-- NekCEM/Nek5000/NekRS user, developer, and forum contributor
-
-[^nek5000]: [Nek5000](https://nek5000.mcs.anl.gov) is an efficient scalable open source computational fluid dynamics (CFD) solver using spectral element method (SEM) and [NekRS](https://github.com/Nek5000/NekRS) is its GPU variant. They both target large scale turbulence simulations on supercomputers.
-
-
-
-
-
-
 
 

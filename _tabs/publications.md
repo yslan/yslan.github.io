@@ -2,7 +2,7 @@
 title: Publications
 icon: fas fa-book
 order: -50
-layout: post
+layout: tab
 toc: true
 ---
 
