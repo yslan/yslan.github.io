@@ -1,11 +1,10 @@
 ---
 title: Researches
-icon: fas fa-info
+icon: fas fa-flask
 order: -90
 layout: tab
 toc: true
 ---
-
 
 <!---## Research Interests--->
 
@@ -19,6 +18,10 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
    - Poisson-Nernst-Planck (PNP)
    - Steady state solver with Jacobian-free Newton Krylov (JFNK) method.
    - Preconditioner with domain decomposition and multigrid methods.
+
+<!-- ![test](../assets/img/favicons/android-chrome-512x512.png){: width="200" height="200" .right}-->
+<!-- ![test](../pb_cell.png){: width="200" height="200" .right}-->
+
 - High-Order Mesh Generation
   - Voronoi cell based all-hex meshing algorithms for dense-packed spheres
   - Mesh smoothing and optimization
