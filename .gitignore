@@ -1,3 +1,12 @@
 vendor/
 .jekyll-cache/*
 _site/*
+*.*swp
+*wip*html
+*test.md
+_bak/*
+note
+assets/*
+*png
+*jpg
+_posts/*
