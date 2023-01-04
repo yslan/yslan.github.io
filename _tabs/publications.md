@@ -8,7 +8,7 @@ toc: true
 
 [Google Scholar](https://scholar.google.com/citations?user=Hfzrm8EAAAAJ&hl)
 
-## Conference and Journal Papers
+## Papers
 
 - __Optimization of Full-Core Reactor Simulations on Summit__ [[arXiv](https://arxiv.org/abs/2110.01716)]   
 (SC22) M. Min, ***Y. Lan***, P. Fischer, E. Merzari, S. Kerkemeier, M. Phillips, T. Rathnayake, A. Novak, D. Gaston, N. Chalmers, T. Warburton
