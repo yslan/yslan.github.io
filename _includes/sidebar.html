@@ -29,14 +29,7 @@
   </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
-    <!-- home 
-    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
-      <a href="{{ '/' | relative_url }}" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ "HOME" }}</span>
-      </a>
-    </li>-->
-    <!-- the real tabs -->
+
     {% for tab in site.tabs %}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
@@ -45,6 +38,15 @@
       </a>
     </li> <!-- .nav-item -->
     {% endfor %}
+
+    <!-- home, turn into BLOG but still at root-->
+    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/blog' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ "BLOG" }}</span>
+      </a>
+    </li>
+    <!-- the real tabs -->
 
   </ul> <!-- ul.nav.flex-column -->
 

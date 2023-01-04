@@ -30,6 +30,7 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
 <!--   - NCSA: Delta                            -->   
 - NekCEM/Nek5000/NekRS user, developer, and forum contributor
 
+---
 [^nek5000]: [Nek5000](https://nek5000.mcs.anl.gov) is an efficient scalable open source computational fluid dynamics (CFD) solver using spectral element method (SEM) and [NekRS](https://github.com/Nek5000/NekRS) is its GPU variant. They both target large scale turbulence simulations on supercomputers.
 
 [^ceed]: Center for Efficient Exascale Discretizations [[Website](https://ceed.exascaleproject.org)]

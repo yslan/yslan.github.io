@@ -18,7 +18,7 @@ timezone: America/Chicago
 # --------------------------
 title: Yu-Hsiang Lan                   # the main title
 
-tagline: Homepage   # it will display as the sub-title
+tagline: Always a student #Homepage   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
 #  A minimal, portfolio, sidebar,
@@ -91,6 +91,7 @@ disqus:
   shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
+paginate_path: "/blog/:num/"
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -134,8 +135,9 @@ defaults:
       type: tabs             # see `site.collections`
     values:
       layout: page
-      permalink: /:title/
       dynamic_title: true    # Hide title in mobile screens.
+      toc: true         # Display TOC column in posts.
+      permalink: /:title/
 
 sass:
   style: compressed
