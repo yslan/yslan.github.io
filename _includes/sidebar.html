@@ -30,14 +30,19 @@
 
   <ul class="w-100">
 
+    <!-- the real tabs -->
     {% for tab in site.tabs %}
+    {% if tab.layout != 'categories' and tab.layout != 'tags' and tab.layout != 'archives' %}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
         <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
         <span>{{ tab.title | upcase }}</span>
       </a>
     </li> <!-- .nav-item -->
+    {% endif %}
     {% endfor %}
+
+    <p></p>
 
     <!-- home, turn into BLOG but still at root-->
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
@@ -46,7 +51,38 @@
         <span>{{ "BLOG" }}</span>
       </a>
     </li>
-    <!-- the real tabs -->
+    
+    <!-- Blog related items TODO: figure it out later... -->
+    {% if 1 != 1 %}
+
+    {% for tab in site.tabs %}
+    {% if tab.layout == 'categories' %}
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i style="margin-left: 40px;"></i><i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% endif %}
+    {% if tab.layout == 'tags' %}
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i style="margin-left: 40px;"></i><i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% endif %}
+    {% if tab.layout == 'archives' %}
+    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i style="margin-left: 40px;"></i><i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{{ tab.title | upcase }}</span>
+      </a>
+    </li> <!-- .nav-item -->
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
 
   </ul> <!-- ul.nav.flex-column -->
 
