@@ -51,7 +51,7 @@
     </li>
     
     <!-- Blog related items TODO: figure it out later... -->
-    {% if page.layout == 'home-blog' %}
+    {% if page.layout == 'home-blog' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'archives' %}
 
     {% for tab in site.tabs %}
     {% if tab.layout == 'categories' %}
@@ -84,7 +84,17 @@
 
   </ul> <!-- ul.nav.flex-column -->
 
-  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center">
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+
+    {% unless site.theme_mode %}
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
 
     {% for entry in site.data.contact %}
       {% capture url %}
@@ -104,23 +114,22 @@
 
       {% if url %}
       <a href="{{ url }}" aria-label="{{ entry.type }}"
-        {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
-        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
+        {% assign link_types = nil %}
+        {% unless entry.noblank %}
+          {% assign link_types = link_types | append: " noopener" %}
+          target="_blank"
+        {% endunless %}
+
+        {% if entry.type == 'mastodon' %}
+          {% assign link_types = link_types | append: " me" %}
+        {% endif %}
+
+        {% if link_types %}rel="{{ link_types | lstrip }}"{% endif %}>
         <i class="{{ entry.icon }}"></i>
       </a>
       {% endif %}
 
     {% endfor %}
-
-    {% unless site.theme_mode %}
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border order-2"></span>
-      {% endif %}
-
-      <span id="mode-toggle-wrapper" class="order-1">
-        {% include mode-toggle.html %}
-      </span>
-    {% endunless %}
 
   </div> <!-- .sidebar-bottom -->
 
