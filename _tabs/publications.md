@@ -103,7 +103,7 @@ toc: true
 
 - Speaker, __Numerical Methods of Poisson-Nernst-Planck Based Models with Parallel Implementation and Applications,__ The 9th Taiwan-Japan Joint Workshop for Young Scholars in Applied Mathematics, National Cheng Kung University, Taiwan, March 3–5, 2018.
 
-- Co-lecturer, __Mini-Course on NekCEM–a Numerical PDE Solver__, National Center for Theoretical Sciences, National Taiwan University, Taiwan, Jan. 31–Feb. 6. [[Webpage](http://www.ncts.ntu.edu.tw/events_3_detail.php?nid=141)]
+- Co-lecturer, __Mini-Course on NekCEM–a Numerical PDE Solver__, National Center for Theoretical Sciences, National Taiwan University, Taiwan, Jan. 31–Feb. 6, 2018. [[Webpage](http://www.ncts.ntu.edu.tw/events_3_detail.php?nid=141)]
 
 - Speaker, __Spectral Element Simulations for Charge Transport in Ion Channels Using NekCEM,__ Summer Argonne Students’ Symposium (SASSy), Mathematics and Computer Science Division, Argonne National Laboratory, Jul. 28, 2017.
 
