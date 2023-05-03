@@ -4,6 +4,8 @@ icon: fas fa-info
 order: -100
 layout: tab
 toc: true
+#image: 
+#  path: /pb_cell.png
 ---
 
 
@@ -19,9 +21,12 @@ toc: true
 I am Yu-Hsiang Lan (First name: Yu-Hsiang, Last name: Lan[^tw-name]), or 藍鈺翔 in Taiwanese Mandarin, born and raised in Taiwan.    
 
 My master's research at National Taiwan University (NTU) was my first venture in the field of numerical PDEs. 
-Later, I was lucky to have been invited to Argonne National Laboratory (ANL) as a summer student. It was my first high-performance computing (HPC) experience and I enjoyed it a lot. 
-After getting my master degree in applied math, I had been continually working at Argonne as a pre-doctoral appointee for three years. 
+Later in 2017, I was lucky to be invited to Argonne National Laboratory (ANL) as a summer student. 
+It was my first high-performance computing (HPC) experience and I enjoyed it a lot. 
+After getting my master's degree in applied math, I had been continually working at Argonne as a pre-doctoral appointee for three years. 
 Now, I'm back to school and currently being a computer science master student at University of Illinois working toward a doctoral degree.
+
+
 
 [^tw-name]: [Ref: Taiwanese naming and spelling in English](https://culturalatlas.sbs.com.au/taiwanese-culture/taiwanese-culture-naming)
 
@@ -29,7 +34,7 @@ Now, I'm back to school and currently being a computer science master student at
 
 ## Education
 
-- M.S., Computer Science, Unerversity of Illinois Urbana Champaign, 2021 -- present
+- M.S., Computer Science, Unerversity of Illinois Urbana Champaign, 2023 (estimated)
 - M.S., Applied Mathematics, Naitonal Taiwan University, 2018
 - B.S., Mathematics, Naitonal Taiwan University, 2016
 
@@ -37,6 +42,7 @@ Now, I'm back to school and currently being a computer science master student at
 
 - Research Assistant, University of Illinois, 2021-current
 - Predoctoral Appointee, Argonne National Laboratory, 2018-2021
-- Summer Internship, Argonne National Laboratory, 2017, 2018, and 2022
+- Summer Internship, Argonne National Laboratory, 2017, 2018, 2022, and 2023
+- Research Assistant, National Taiwan University, 2017-2018
 
 
