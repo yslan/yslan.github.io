@@ -23,7 +23,8 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
    - Incompressible Navier-Stokes (NS), Reynolds-Averaged Navier-Stokes (RANS)
    - Poisson-Nernst-Planck (PNP)
    - Steady state solver with Jacobian-free Newton Krylov (JFNK) method.
-   - Preconditioner with domain decomposition and multigrid methods.
+   - Preconditioner techniques for Poisson and advection-diffusion system(s).       
+     Domain decomposition, multigrid methods, low-order preconditioner, and more.
 
 <!-- ![test](../assets/img/favicons/android-chrome-512x512.png){: width="200" height="200" .right}-->
 <!-- ![test](../pb_cell.png){: width="200" height="200" .right}-->
@@ -39,6 +40,7 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
 
 - High-Performance Computing
    - Large-scale simulations on top 10 supercomputers including CPUs and GPUs 
+   - Exascale workflow and performance studies
 <!--   - ALCF: Mira, Theta/ThetaGPU, Polaris    -->
 <!--   - OLCF: Titan, Summit, Crusher           -->
 <!--   - NERSC: Perlmutter                      -->

@@ -22,10 +22,9 @@ I am Yu-Hsiang Lan (First name: Yu-Hsiang, Last name: Lan[^tw-name]), or 藍鈺�
 
 My master's research at National Taiwan University (NTU) was my first venture in the field of numerical PDEs. 
 Later in 2017, I was lucky to be invited to Argonne National Laboratory (ANL) as a summer student. 
-It was my first high-performance computing (HPC) experience and I enjoyed it a lot. 
+It was my first high-performance computing (HPC) experience and it's very satisfying to run my own code at scale. I enjoyed it a lot. 
 After getting my master's degree in applied math, I had been continually working at Argonne as a pre-doctoral appointee for three years. 
-Now, I'm back to school and currently being a computer science master student at University of Illinois working toward a doctoral degree.
-
+Now, I'm back to school and currently being a computer science student at University of Illinois working toward a doctoral degree.
 
 
 [^tw-name]: [Ref: Taiwanese naming and spelling in English](https://culturalatlas.sbs.com.au/taiwanese-culture/taiwanese-culture-naming)
@@ -34,9 +33,10 @@ Now, I'm back to school and currently being a computer science master student at
 
 ## Education
 
-- M.S., Computer Science, Unerversity of Illinois Urbana Champaign, 2023 (estimated)
-- M.S., Applied Mathematics, Naitonal Taiwan University, 2018
-- B.S., Mathematics, Naitonal Taiwan University, 2016
+- Ph.D., Computer Science, University of Illinois Urbana Champaign, 2028 (estimated)
+- M.S., Computer Science, University of Illinois Urbana Champaign, 2023
+- M.S., Applied Mathematics, National Taiwan University, 2018
+- B.S., Mathematics, National Taiwan University, 2016
 
 ## Employment
 
