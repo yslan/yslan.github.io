@@ -27,7 +27,7 @@ As for the right element, we have points
 $x_0^2, x_1^2, \cdots, x_N^2$.
 Since two elements are connected, they share a common interface point $$x^1_N = x^2_0$$.
 Therefore, there are only $2N+1$ unique points and we order those unique coordinates with global indices from $x_0$ to $x_{2N}$.
-On the same coordinates, $x_N = x^1_N = x^2_0$, if there a function $u(x)$ is continuous across the elements we will have $u(x_N) = u(x^1_N) = u(x^2_0)$.
+On the same coordinates, $x_N = x^1_N = x^2_0$, if there is a continuous function $u(x)$ across the elements we will have $u(x_N) = u(x^1_N) = u(x^2_0)$.
 
 Up to this stage, we have two numbering systems.
 
@@ -52,7 +52,7 @@ With two elements $\Omega=\Omega^1\cup\Omega^2$, the integral is simply the sum 
 
 $$A[u](v) :=  \int_{\Omega^1} v A(u) +  \int_{\Omega^2} v A(u)$$
 
-From the view of the global grid points, the point $x_N$ will naturally have contribution in both elements.
+From the view of the global grid points, the point $x_N$ will naturally have contribution in both integrals in each element.
 
 ### 1.2 Collocation Viewpoint
 
@@ -76,7 +76,7 @@ $$\begin{pmatrix} a^1_{0,0} & a^1_{0,1} & \cdots & a^1_{0,N} & & & & \\
 u(x_0) \\ u(x_1) \\ \vdots  \\ u(x_N) \\ u(x_{N+1}) \\ \vdots \\ u_(x_{2N})
 \end{pmatrix} = 
 \begin{pmatrix} 
-f(x_0) \\ f(x_1) \\ \vdots  \\ f(x_N) \\ f(x_{N+1}) \\ \vdots \\ f_(x_{2N})
+f(x_0) \\ f(x_1) \\ \vdots  \\ 2f(x_N) \\ f(x_{N+1}) \\ \vdots \\ f_(x_{2N})
 \end{pmatrix}$$
 
 
@@ -97,7 +97,7 @@ $$\underline{u}_L = Q \underline{u}_G =
 As for the gather operator, it can be treated as the scatter operation from the test function, which is defined as $Q^T$
 
 Solving the global linear system $A_G \underline{u}_G = \underline{f}_G$ is same as solving the local linear system
-$QQ^T A_L \underline{u}_L = QQ^T\underline{f}_L$ (up to the rank = degree of freedom). Despite the values are summed at the interface points, the right-hand-side is also doubled so it still give the same answer after the solve. 
+$QQ^T A_L \underline{u}_L = QQ^T\underline{f}_L$ up to the rank = degree of freedom. Despite the values are summed at the interface points, the right-hand-side is also doubled so it still give the same answer after the solve. 
 
 One extra detail is, when solving the local system with iterative methods, one has to use either the integral norm or a re-scaled algebraic norm weighted with the inverse of the multiplicity. In other words, the algebraic norm follows the norm in global system.
 
@@ -123,7 +123,7 @@ Q = sparse(local_index,global_index,1.0,nV,nUV);
 
 ## 3. Nek5000's connectivity
 
-In my opinion, whoever builds the mesh needs to make sure the mesh is water-tight in the sense that there is no leaking holes between elements, or $\Omega = \cup_{e=1}^E \Omega^{(e)}$ where arbitrary two elements has no volume in $d$-th dimension measure $\Omega^{(i)}\cap\Omega^{(j)}$. This means, one needs to keep track on the connectivity during the meshing. 
+In my opinion, whoever builds the mesh needs to make sure the mesh is water-tight in the sense that there is no leaking holes between elements, or $\Omega = \cup_{e=1}^E \Omega^{(e)}$ where arbitrary two elements has no volume in $d$-th dimension measure $|\Omega^{(i)}\cap\Omega^{(j)}|=0$. This means, one needs to keep track on the connectivity during the meshing. 
 However, meshing is already hard, it will be more flexible if we don't have to worry about connectivity at each stage. Nek has tools to rebuild the connectivity and user can alter the connectivity in the `.usr` file as well.
 
 ```bash
@@ -138,17 +138,24 @@ However, meshing is already hard, it will be more flexible if we don't have to w
 The `genmap` is a robust tool that does two things, connectivity and partitioning. We will talk about partitioning in future post. 
 
 The algorithm first sorts the coordinates based on their physical coordinates.
-With an user provide relative mesh tolerance (default = 0.2), if the distance of two vertices smaller than the criterion, then it assign the same node index. 
+With an user-provided relative mesh tolerance (default = 0.2), if the distance of two vertices smaller than the criterion, then they share the same node index. 
 
-Larger tol is more forgiving to the bad mesh. However, if tol is too large, it will fuse too many points together which collapse the hex elements and causing zero Jacobian value. 
+The tol here is an #\epsilon$-ball that can cover the leaking holes in mesh. 
+Therefore, a larger tol is more forgiving to the bad mesh. 
+However, if tol is too large, it can fuse too many points together, which collapses and degenerates the hex elements and causing zero Jacobian value. 
 
-The smaller tol can usually get a valid connectivity for high aspect ratio mesh. The limit $tol \to 0$ will make each elements isolated, which can still be valid but it's usually not what we want.
+The smaller tol can usually get a valid connectivity for high aspect ratio mesh. 
+The "valid" here means runnable in Nek, which doesn't mean it's correct. 
+For example, at the limit $tol \to 0$, all elements are treated as isolated subdomains that is not connected to others.
 
+The "isolated" elements is harder to detect but it usually generates an empty boundary condition.
 The recommendation workflow for `genmap` is 
 1. Use default tol (0.2) by hitting the return key
 2. If it fails, tighten the tol
 3. Repeat 2 until it works, but user must be very careful if tol is, says, less than $10^{-3}$
 
+Keep in mind that, precision matters. 
+If a mesh has high aspect ratio but only stored in ascii `.rea` format, it might not have enough of precision to use tol-based connectivity tools.
 
 ### 3.2. `.con`/`.co2` file and `gencon`
 
@@ -174,15 +181,15 @@ The `gencon` is a subset of `genmap` that only does the connectivity, so the `.c
 ### 3.3. `n2to3co2` tool
 `n2to3co2` is a new tool that can extrude a 2D `.con/.co2` files to a 3D `.co2`. It follows the same element ordering in the mesh by `n2to3`. This tool allow us to generate connectivity for a huge mesh (`E = 200M ~ 2Bn`) for testing and debugging purpose.
 
-### 3.4. parCon (in parRSB)
-Both `genmap` and `gencon` are serial tool. As the problem size gets larger, we face issues that it takes hours to dump a `.co2`. Plus, it will need a large RAM server to run it. Personally, if the case is larger than 1M or 10M elements, I'd suggest to use `parCon` and `parRSB`.
+### 3.4. parCon (shipped in parRSB)
+Both `genmap` and `gencon` are serial tool. As the problem size gets larger, it can take hours to generate a `.co2`. Plus, it will need a large RAM server to run it. Personally, if the case is larger than 1M or 10M elements, I'd suggest to use `parCon` and `parRSB`.
 
 ### 3.5. `setvert` and `usersetvert`
-The `.co2` only has the connectivity of the vertices of the elements which is stored as the Nek variable `glo_num`.
+Once the code starts, it reads the global indices of all vertices of the elements and stores it into Nek variable, `glo_num`.
 The subroutine `setvert` in Nek5000 will generate the global indices for each grid points `vertex`. 
 The indices are numbered in the order of vertices, edges, face, and interior points.
 At the end of `setvert`, it calls `usersetvert` which allows user to modify or overwrite the index. 
-
+This allows user to do whatever they want to modify the connectivity. 
 
 ### 3.6. `gs` functions
 Nek5000 will setup the gather scatter operations based on the connectivity.
@@ -207,22 +214,22 @@ It's super easy to achieve (double/triple) periodic, or even complicate topology
 ### 4.1 `genbox` and `.rea`/`.re2`
 The `genbox` will set the boundary condition `"P  "` in `.rea`/`.re2` and specify the neighbor's element id and face id into `bc(1,f,e,ifield)` and `bc(2,f,e,ifield)`. This, however, is a temporary information for the tools like `genmap`. At runtime, this "face-to-face" connectivity is never used. 
 
-One can use this face-to-face connectivity in my understanding, this is how we deal with the vector-translated periodic, `p  `.
+One can use this face-to-face connectivity, in my understanding, this is how we deal with the vector-translated periodic, `p  `.
 
 > Note: The periodic BC set in the `.box` file only works when there is a single box. For multi-boxes, one has to fix the periodicity with `prenek`'s auto-periodic.
 {: .prompt-tip }
 
 
 ### 4.2 `genmap` (or `gencon`) 
-`genmap` will read the "face-to-face" connectivity stored in `.rea`.  
-One can directly generate the `.co2` file to have desired connectivity.
+`genmap` will read the "face-to-face" connectivity stored in `.rea` or `.re2`.  
+One can directly modified the generated the `.co2` file to have desired connectivity.
 
 > Note: `genmap` require 3 layers of elements to identify the periodic with correct orientation.
 Think about Möbius strip, face-to-face connectivity can still flip the face orientation in 2D.
 {: .prompt-tip }
 
 ### 4.3 `usrsetvert`
-One can modify the connectivity in the subroutine `usrsetvert` (`.usr`). This allows us get rid of "3 layers of elements" condition. See NekRS example [channel](https://github.com/Nek5000/nekRS/blob/master/examples/channel/channel.usr)
+This is called at runtime, which is the last chance to modify the connectivity. In the subroutine `usrsetvert` (`.usr`) is called after setup. This allows us get rid of "3 layers of elements" condition. See NekRS example [channel](https://github.com/Nek5000/nekRS/blob/master/examples/channel/channel.usr)
 
 > `fix_geom` will make sure the grid points sharing the same global vertex are at the same location.
    However, the points that has `P  ` will be skipped.
