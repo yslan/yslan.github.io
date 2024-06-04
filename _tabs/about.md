@@ -42,7 +42,7 @@ Now, I'm back to school and currently being a computer science student at Univer
 
 - Research Assistant, University of Illinois, 2021-current
 - Predoctoral Appointee, Argonne National Laboratory, 2018-2021
-- Summer Internship, Argonne National Laboratory, 2017, 2018, 2022, and 2023
+- Summer Internship, Argonne National Laboratory, 2017, 2018, 2022, 2023 and 2024
 - Research Assistant, National Taiwan University, 2017-2018
 
 

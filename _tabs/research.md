@@ -37,15 +37,21 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
   ![ann3344](../assets/img/figs/pb/ann3344.gif){: width="156.6"}
   ![ann350k](../assets/img/figs/pb/350peb_2.png){: width="288"}
 
-
 - High-Performance Computing
    - Large-scale simulations on top 10 supercomputers including CPUs and GPUs 
    - Exascale workflow and performance studies
+   - In-situ visualization
+
+   {% include embed/youtube.html id='F0g1cnkcwHI' w='48%' %}
+   {% include embed/youtube.html id='59aYUDscn-g' w='48%' %}
+
 <!--   - ALCF: Mira, Theta/ThetaGPU, Polaris    -->
 <!--   - OLCF: Titan, Summit, Crusher           -->
 <!--   - NERSC: Perlmutter                      -->
 <!--   - NCSA: Delta                            -->   
+
 - NekCEM/Nek5000/NekRS user, developer, and forum contributor
+
 
 
 ---
