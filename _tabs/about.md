@@ -40,6 +40,7 @@ Now, I'm back to school and currently being a computer science student at Univer
 
 ## Employment
 
+- Teaching Assistant, University of Illinois, Fall 2024
 - Research Assistant, University of Illinois, 2021-current
 - Predoctoral Appointee, Argonne National Laboratory, 2018-2021
 - Summer Internship, Argonne National Laboratory, 2017, 2018, 2022, 2023 and 2024

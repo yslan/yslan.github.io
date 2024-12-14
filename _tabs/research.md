@@ -12,16 +12,13 @@ toc: true
 <!---![test](../assets/img/figs/pb_ann350k_px600.png)--->
 
 
-> **TODO**: Add showcase in posts
-> 
-
-I'm interested in Numerical PDE methods, mostly focusing on aspects related to spectral element method, with the aide of high-performance computing. 
+I'm interested in numerical PDE methods, mostly focusing on aspects related to spectral element method, with the aide of high-performance computing.
 My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEED[^ceed] project. 
 
 
 - High-Order Methods for Numerical Partial Differential Equations
    - Incompressible Navier-Stokes (NS), Reynolds-Averaged Navier-Stokes (RANS)
-   - Poisson-Nernst-Planck (PNP)
+   - Poisson-Nernst-Planck (PNP) equations
    - Steady state solver with Jacobian-free Newton Krylov (JFNK) method.
    - Preconditioner techniques for Poisson and advection-diffusion system(s).       
      Domain decomposition, multigrid methods, low-order preconditioner, and more.
@@ -42,8 +39,8 @@ My current research is centered on Nek5000/NekRS[^nek5000], working with ECP/CEE
    - Exascale workflow and performance studies
    - In-situ visualization
 
-   {% include embed/youtube.html id='F0g1cnkcwHI' w='48%' %}
-   {% include embed/youtube.html id='59aYUDscn-g' w='48%' %}
+     {% include embed/youtube.html id='F0g1cnkcwHI' w='48%' %}
+     {% include embed/youtube.html id='59aYUDscn-g' w='48%' %}
 
 <!--   - ALCF: Mira, Theta/ThetaGPU, Polaris    -->
 <!--   - OLCF: Titan, Summit, Crusher           -->
